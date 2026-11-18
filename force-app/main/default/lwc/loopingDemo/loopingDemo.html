@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Looping Demo">
+
+        <template for:each={contacts} for:item="details">
+            <div key={details.email}>
+                <lightning-formatted-email value={details.email}></lightning-formatted-email>
+            </div>
+        </template>
+
+        
+    </lightning-card>
+    <lightning-card title="iteration Demo">
+        <template iterator:it={contacts}>
+            <div key={it.value.recordId}>
+                <div lwc:if={it.first} class="list-first"></div>
+                <lightning-formatted-email value={it.value.email}></lightning-formatted-email>
+                <div lwc:if={it.last} class="list-last"></div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

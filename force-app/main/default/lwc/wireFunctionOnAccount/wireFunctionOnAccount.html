@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="wire function on account">
+        <div class="slds-var-p-around_small">
+            <lightning-input label="Enter Account Industry" value={InpIndustry} onchange={changeHandler}></lightning-input>
+        </div>
+        <template lwc:if={Accounts}>
+            <div style="height: 300px;">
+                <lightning-datatable
+                 key-field="Id" 
+                 data={Accounts}
+                  columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+        <template lwc:elseif={Errors}>
+            <p>Error While loading the data.</p>
+        </template>
+    </lightning-card>
+</template>

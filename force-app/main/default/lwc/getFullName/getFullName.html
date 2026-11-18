@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Calculator">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="First Name" name="fn" onchange={handleOnFullNmae}></lightning-input>
+            <lightning-input type="text" label="Last Name" name="ln" onchange={handleOnFullNmae}></lightning-input>
+        
+        <div>
+            <lightning-button label="Get FullName" variant="Brand" onclick={handleOnClick}></lightning-button>
+        </div>
+        <lightning-formatted-text value={result}></lightning-formatted-text>
+        </div>
+    </lightning-card>
+</template>

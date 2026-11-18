@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Case Status Search by Imperative">
+        <div class="slds-var-p-around_small">
+            <lightning-input label="Enter Case Status" value={caseName} onchange={changeHandler}></lightning-input>
+            <lightning-button label="Search" variant="brand" onclick={fetchCases} class="slds-m-top_small"></lightning-button>
+        </div>
+
+        <div class="slds-var-p-around_small">
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+
+            <template lwc:if={cases.length}>
+                <div style="height: 300px;">
+                    <lightning-datatable key-field="Id" data={cases} columns={columns}></lightning-datatable>
+                </div>
+            </template>
+
+            <template lwc:elseif={error}>
+                <p>{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,27 @@
+<template>
+    <lightning-card>
+    <lightning-input 
+      type="number"
+      name="pri"
+      label="Enter priciple amount"
+      onchange={changehandler}
+    ></lightning-input>
+     <lightning-input 
+     type="number" 
+     name="int"
+    label="Enter Interest" 
+    onchange={changehandler}>
+</lightning-input>
+    <lightning-input 
+    type="number" 
+    name="ten"
+    label="Enter the tenure" 
+    onchange={changehandler}>
+</lightning-input>
+<lightning-button label="Calculate" 
+    onclick={calculateEMI}>
+</lightning-button>
+    <p>{emiResult}</p>
+    <p>{totalPayAmount}</p>
+</lightning-card>
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="parent Component">
+        
+        <div>
+            <lightning-input label="Input Message" onchange={handleOnChange}></lightning-input>
+        </div>
+        <div>
+            <lightning-button variant="brand" label="Convert" onclick={handleOnClick}></lightning-button>
+        </div>
+        <div>
+            <c-convert-input-child-comp message={input}></c-convert-input-child-comp>
+        </div>
+    </lightning-card>
+</template>
+
+<!-- <template>
+    <c-child-component-api message={messageFromParent}></c-child-component-api>
+</template>
+
+import { LightningElement } from 'lwc';
+
+export default class ParentComponentApi extends LightningElement {
+messageFromParent = 'Welcome to Learn API Decorators'
+} -->

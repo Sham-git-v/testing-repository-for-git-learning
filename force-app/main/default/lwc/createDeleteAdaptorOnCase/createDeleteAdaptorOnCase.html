@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Wire Parameter Demo">
+        <div class="slds-var-p-around_small">
+            <lightning-input label="Enter Case Status" onchange={changeHandler}></lightning-input>
+        </div>
+        <div class="slds-var-p-around_small">
+            <template lwc:if={cases.data}>
+                <div style="height: 300px;">
+                    <lightning-datatable key-field="Id" data={cases.data} columns={columns}>
+                    </lightning-datatable>
+                </div>
+            </template>
+            <template lwc:elseif={cases.error}>
+                <p>Failed to load the data</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

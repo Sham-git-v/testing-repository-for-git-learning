@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Display Account Records based on Rating selection">
+        <div class="slds-var-p-around_small">
+            <template lwc:if={accountRatingOptions.data}>
+                <lightning-combobox name="rating" label="Select Rating" placeholder="rating"
+                    options={accountRatingOptions.data.values} value={inpRating} onchange={handleOnChange}></lightning-combobox>
+            </template>
+        </div>
+
+        <template lwc:if={accounts}>
+            <div style="height: 300px;">
+                <lightning-datatable key-field="Id" data={accounts} columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+        <template lwc:elseif={errors}>
+            <p>Error While loading the data.</p>
+        </template>
+    </lightning-card>
+</template>

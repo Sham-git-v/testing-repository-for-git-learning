@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Get Record On Case">
+        <div class="slds-var-p-around_small">
+            <p>Case Number     : <lightning-formatted-text value={caseNumbers}></lightning-formatted-text></p>
+            <p>Case Origin     : <lightning-formatted-text value={CaseOrigins}></lightning-formatted-text></p>
+            <p>Case Status     : <lightning-formatted-text value={caseStatuss}></lightning-formatted-text></p>
+            <p>Case subject    : <lightning-formatted-text value={caseSubjects}></lightning-formatted-text></p>
+            <p>Case Description: <lightning-formatted-text value={caseDescriptions}></lightning-formatted-text></p>
+        </div>
+    </lightning-card>
+    <lightning-card title="Get Record On Case">
+        <div class="slds-var-p-around_small">
+            <template lwc:if={CaseRecords}>
+                <template for:each={CaseRecords.results} for:item="ccResult">
+                  <div key={ccResult.result.fields.id}>
+                    <p>Case Number: {ccResult.result.fields.Status.value}</p>
+                  
+                  </div>
+                </template>
+            </template>
+            <template lwc:if={CaseErrors}>
+                <p>Error while loading the data.</p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

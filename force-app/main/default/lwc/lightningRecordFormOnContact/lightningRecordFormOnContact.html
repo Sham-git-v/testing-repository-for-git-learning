@@ -1,0 +1,25 @@
+<template>
+    
+    <lightning-card title="Create Contact and navigate to record">
+        <div class="slds-var-p-around_small">
+            <lightning-record-form 
+            object-api-name={objectApiName}
+             fields={fields} 
+             onsuccess={handleSuccess} 
+             onerror={handleerror}></lightning-record-form>
+    
+        </div>
+    </lightning-card>
+    
+    <lightning-card title="Record Form of Contact">
+        <div class="slds-var-p-around_small">
+            <lightning-record-form
+                record-id={recordId}
+                object-api-name={objectApiName}
+                fields={fields}
+                onsuccess={handleSuccess}
+                onerror={handleerror}></lightning-record-form>
+
+        </div>
+    </lightning-card>   
+</template>

@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <div  class="slds-p-around_medium lgc-bg">
+        <h2 align="center"><b>Registration Form</b></h2>
+        <lightning-input type="text" label="First Name" name="fn" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="text" label="Last Name" name="ln" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="tel" label="phone" name="pn" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="email" label="Email" name="eml" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="text" label="Address" name="add" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="number" label="Experience in Years" name="eiy" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="text" label="Technology" name="tec" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="text" label="Company Details" name="cd" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="number" label="Current Salary" name="cs" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="number" label="Expected Salary" name="es" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="text" label="Location" name="lo" onchange={handleOnChange}></lightning-input>
+        <lightning-input type="file" label="Upload Resume" name="ur" accept="image/png, .zip" multiple onchange={handleOnChange}></lightning-input>
+
+
+        <lightning-button label="Submit" variant="Brand" onclick={handleOnClick}></lightning-button>
+
+        </div>
+    </lightning-card>
+</template>

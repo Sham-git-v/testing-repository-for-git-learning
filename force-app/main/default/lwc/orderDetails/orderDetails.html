@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Order Details">
+        <template for:each={orders} for:item="item">
+            <div key={item.orderId}>
+                <div class="slds-p-around_medium lgc-bg">
+                    {item.orderId}
+                    {item.customerName}
+                    {item.orderAmount}
+                    {item.orderDate}
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

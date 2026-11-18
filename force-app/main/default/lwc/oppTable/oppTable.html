@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Opportunity Table">
+        <template lwc:if={Opportunities.data}>
+        <div class="slds-p-around_medium">
+            <lightning-datatable
+             key-field="Id" 
+            hide-checkbox-column
+             data={Opportunities.data} 
+             columns={columns}
+            ></lightning-datatable>
+        </div>
+        </template>
+        <template lwc:elseif={Opportunities.error}>
+            <p>Opportunities details not found.</p>
+        </template>
+    </lightning-card>
+</template>

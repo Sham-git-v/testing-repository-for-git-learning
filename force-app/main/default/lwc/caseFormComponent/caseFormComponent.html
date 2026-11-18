@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Case Form for New Case OR Edit Case">
+        <div class="slds-var-pa-around_small">
+        <lightning-button label="Create New Case" variant="brand" onclick={handleCreatCase}></lightning-button>
+        
+        <lightning-button label="Edit Case" variant="brand" onclick={handleEditCase} class="slds-m-left_x-small"></lightning-button>
+        </div>
+
+        <template lwc:if={clickedNewbutton}>
+            <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleOnCreateSuccess} onsubmit={handleOnCreateSubmit} onerror={handleOnCreateError} class="createRequired">
+                <div class="slds-var-pa-around_small">
+                    <lightning-input-field field-name={caseSubject}></lightning-input-field>
+                    <lightning-input-field field-name={caseStatus}></lightning-input-field>
+                    <lightning-input-field field-name={casePriority}></lightning-input-field>
+                    <lightning-input-field field-name={caseDescription}></lightning-input-field>
+                </div>
+                <div class="slds-var-p-around_small slds-text-align_center">
+                    <lightning-button label="submit" type="submit" variant="brand"></lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </template>
+        <template lwc:elseif={clickedEditButton}>
+            <lightning-record-edit-form record-id={recordId} object-api-name={objectApiName} onsuccess={handleOnCreateSuccess} onsubmit={handleOnCreateSubmit}
+                onerror={handleOnCreateError} class="createRequired">
+                <div class="slds-var-pa-around_small">
+                    <lightning-input-field field-name={caseSubject}></lightning-input-field>
+                    <lightning-input-field field-name={caseStatus}></lightning-input-field>
+                    <lightning-input-field field-name={casePriority}></lightning-input-field>
+                    <lightning-input-field field-name={caseDescription}></lightning-input-field>
+                </div>
+                <div class="slds-var-p-around_small slds-text-align_center">
+                    <lightning-button label="submit" type="submit" variant="brand"></lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </template>
+       
+    </lightning-card>
+</template>

@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Body Mass Indes">
+        <div>
+           
+            <lightning-input name="enhet" label="Enter Height" type="number" onchange={handleOnChange}></lightning-input>
+            <lightning-input name="enwet" label="Enter Weight" type="number" onchange={handleOnChange}></lightning-input>
+        </div>
+        <div>
+            <lightning-button label="Get BMI" variant="brand" onclick={handlOnClick}></lightning-button>
+        </div>
+        <div>
+            <p>{CalculatedBmi}</p>
+            <p>{BmiCategory}</p>
+        </div>
+    </lightning-card>
+</template>
+
+<!-- Input Fields:
+
+Height (in meters or feet/inches, with unit selection option)
+Weight (in kilograms or pounds, with unit selection option) -->
+
+<!-- Calculation Logic:
+
+Calculate BMI using the formula: BMI=(height in meters)2weight in kg
+Provide unit conversion if necessary (e.g., convert pounds to kilograms, inches to meters). -->
+
+<!-- Output Display:
+
+Display the calculated BMI.
+Show the corresponding BMI category:
+Underweight: BMI < 18.5
+ Normal weight: 18.5 ≤ BMI < 24.9
+  Overweight: 25 ≤ BMI < 29.9
+   Obese: BMI ≥ 30 -->

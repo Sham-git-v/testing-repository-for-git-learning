@@ -1,0 +1,18 @@
+<template>
+    <lightning-card class="Contact record">
+        <div class="slds-var-p-around_small">
+            <lightning-input label="Enter First Name" type="text" name="fname" onchange={handlOnchange}></lightning-input>
+            <lightning-input label="Enter Last Name" type="text" name="lname" onchange={handlOnchange} required="true"
+                message-when-value-missing="Last Name is Mandatory"></lightning-input>
+            <lightning-input label="Enter Email" type="email" name="eml" onchange={handlOnchange}
+                message-when-type-mismatch="Enter correct email address"></lightning-input>
+            <template lwc:if={leadOptionList.data}>
+                <lightning-combobox name="lsource" label="Select Lead Source" placeholder="lead source"
+                    options={leadOptionList.data.values} onchange={handlOnchange}></lightning-combobox>
+            </template>
+            <div class="slds-var-p-around_small slds-text-align_center">
+                <lightning-button label="Save" onclick={saveLead} variant="brand"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

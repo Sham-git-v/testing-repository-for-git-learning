@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Get Picklist Values Of Lead Object">
+        <div class="slds-var-p-around_small">
+            <template lwc:if={leadOptionList.data}>
+                <lightning-combobox name="leadsource" label="Select Lead Source" placeholder="lead source"
+                    options={leadOptionList.data.values}></lightning-combobox>
+            </template>
+        </div>
+    </lightning-card>
+</template>

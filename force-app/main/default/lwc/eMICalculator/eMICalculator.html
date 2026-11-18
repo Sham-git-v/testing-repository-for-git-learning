@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input label="Principal Amount" type="number" step=".01" formatter="currency" value={totalAmount}
+                onchange={handleOnChange}></lightning-input>
+            <lightning-input label="Intrest Rate" type="number" step="0.01" formatter="percent" value={interestRate}
+                onchange={handleOnChange}></lightning-input>
+            <lightning-input label="Tenure" type="month" value={selectedMonth} onchange={handleOnChange}></lightning-input>
+        </div>
+    </lightning-card>
+</template>

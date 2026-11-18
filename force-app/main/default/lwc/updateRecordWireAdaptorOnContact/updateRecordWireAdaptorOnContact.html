@@ -1,0 +1,8 @@
+<template>
+   <lightning-card title="Update Contact Record">
+    <div class="slds-var-p-around_medium">
+        <lightning-input label="Enter Last Name" value={contactLastName} onchange={handleOnChange} required="true"></lightning-input>
+        <lightning-button label="Update Record" onclick={handleUpdateRecord}></lightning-button>
+    </div>
+   </lightning-card>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <template lwc:if={selecetedId}>
+    <lightning-card title="Detail Record">
+        <div class="slds-var-p-around_small">
+            <lightning-record-form record-id = {selecetedId} object-api-name="Contact" layout-type="Full"
+            columns="2" mode="readonly"></lightning-record-form>
+        </div>
+    </lightning-card>
+    </template>
+    <template lwc:else>
+        <lightning-card title="Detail Record">
+            <p>Please select a record</p>
+        </lightning-card>
+    </template>
+</template>

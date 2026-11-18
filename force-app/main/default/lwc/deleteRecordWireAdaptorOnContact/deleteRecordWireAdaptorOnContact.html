@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Delete Record Adaptor">
+        <div class="slds-var-p-around_small">
+            <template lwc:if={contactList.data}>
+                <div style="height: 300px;">
+                    <lightning-datatable key-field="Id" data={contactList.data} onrowselection={handleRowSelection} columns={columns} max-row-selection="1">
+                    </lightning-datatable>
+                </div>
+                <div class="slds-var-p-around_small">
+                    <lightning-button variant="destructive" label="Delete Record" onclick={deleteHandler}></lightning-button>
+                </div>
+            </template>
+            <template lwc:if={contactList.error}>
+                <p>Error while loading top Accounts</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
