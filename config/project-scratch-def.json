@@ -1,13 +1,25 @@
 {
   "orgName": "Demo company",
   "edition": "Developer",
-  "features": ["EnableSetPasswordInApi"],
+  "features": ["EnableSetPasswordInApi","MultiCurrency","FieldService:1","LightningScheduler","Communities","B2BCommerce"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
+    },
+    "currencySettings": {
+      "enableMultiCurrency": true
+    },
+    "communitiesSettings": {
+      "enableNetworksEnabled": true
+    },
+    "caseSettings": {
+      "systemUserEmail": "admin@example.com"
+    },
+    "emailAdministrationSettings": {
+      "enableEnhancedEmailEnabled": true
     }
   }
 }
